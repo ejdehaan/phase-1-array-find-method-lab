@@ -5,9 +5,21 @@ const record = [
     //...
   ]
 
-  function superbowlWin(teamRecord) {
-    record.find(year => year === "2018" )
-  }
+function findWin(obj) {
+  return (obj.result === "W")
+}
 
+/*
+  function superbowlWin(teamRecord) {
+    var found = teamRecord.find(element => element.result === "W")
+    console.log(found)
+    return found.year
+  }
+*/
+function superbowlWin(teamRecord) {
+  var found = teamRecord.find(findWin)
+  console.log(found)
+  return (found && found !== null && found !== undefined) ? found.year : undefined
+}
  
 
